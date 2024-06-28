@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "HAeoFT4Y2EKeQmpmXkEhk5D7LoLR68vS4ZuVAxYXtWS1EMMSW4H1BSL3hYf4fawzk9GUFsit5xOLlzldbNNLSg==",
+  "success": true,
+  "projectFilePath": "/home/nico/dotnet/poke_cli/poke_cli.csproj",
+  "expectedPackageFiles": [
+    "/home/nico/.nuget/packages/microsoft.extensions.logging.abstractions/7.0.1/microsoft.extensions.logging.abstractions.7.0.1.nupkg.sha512",
+    "/home/nico/.nuget/packages/mysqlconnector/2.3.7/mysqlconnector.2.3.7.nupkg.sha512",
+    "/home/nico/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.6/microsoft.aspnetcore.app.ref.8.0.6.nupkg.sha512"
+  ],
+  "logs": []
+}
