@@ -1,17 +1,20 @@
-﻿
-using System.Data;
+﻿using System.Data;
+using POKE_CLI.utils;
+using POKE_CLI.database;
+using POKE_CLI.runnap;
 
 public class Program
 {
     public static void Main(string[] args)
     {
-        var database = new MySqlDb("user=root;password=nicanor24;database=pokemons;host=localhost");
-        var ui = new UI();
+        IDb database = new MySqlDb("user=root;password=nicanor24;database=pokemons;host=localhost");
+        UI ui = new UI();
         Config conf = ui.HandleInput(args);
 
         try
         {
             database.Open();
+            Console.WriteLine("Open connection.");
             try
             {
                 RunApp.Run(conf,database);
@@ -28,6 +31,7 @@ public class Program
         finally
         {
             database.Close();
+            Console.WriteLine("\nClose connection.");
         }
     }
 }

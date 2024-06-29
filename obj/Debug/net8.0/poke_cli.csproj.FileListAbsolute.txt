@@ -16,3 +16,4 @@
 /home/nico/dotnet/poke_cli/obj/Debug/net8.0/poke_cli.pdb
 /home/nico/dotnet/poke_cli/obj/Debug/net8.0/poke_cli.genruntimeconfig.cache
 /home/nico/dotnet/poke_cli/obj/Debug/net8.0/ref/poke_cli.dll
+/home/nico/dotnet/poke_cli/obj/Debug/net8.0/poke_cli.sourcelink.json

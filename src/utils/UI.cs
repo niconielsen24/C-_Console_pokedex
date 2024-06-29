@@ -1,3 +1,4 @@
+namespace POKE_CLI.utils;
 
 public class UI
 {
@@ -9,6 +10,7 @@ public class UI
         options = new List<(string, string, int)>();
         options.Add(("-h", "--help", 0));
         options.Add(("-p", "--pokemon", 1));
+        options.Add(("-i", "--id_num", 1));
     }
 
     public Config HandleInput(string[] args)
@@ -24,7 +26,7 @@ public class UI
                         string name = args[i];
                         if (requiresArg == 0)
                         {
-                            optionDict[name] = "";
+                            optionDict?.Add(name,"");
                         }
                         else
                         {
@@ -46,8 +48,11 @@ public class UI
         bool printHelp = optionDict.ContainsKey("-h") || optionDict.ContainsKey("--help");
         bool pokemonS = optionDict.ContainsKey("-p");
         bool pokemonL = optionDict.ContainsKey("--pokemon");
-        bool pokemon =  pokemonS || pokemonL;
+        bool pokemonIdS = optionDict.ContainsKey("-i");
+        bool pokemonIdL = optionDict.ContainsKey("--id_num");
+        bool pokemon =  pokemonS || pokemonL || pokemonIdS || pokemonIdL;
         string pokeName = "";
+        int pokeId = 0;
         if(pokemon && pokemonS)
         {
             pokeName = optionDict["-p"];
@@ -56,8 +61,16 @@ public class UI
         {
             pokeName = optionDict["--pokemon"];
         }
+        else if (pokemon && pokemonIdS)
+        {
+            pokeId = int.Parse(optionDict["-i"]);
+        }
+        else if (pokemon && pokemonIdL)
+        {
+            pokeId = int.Parse(optionDict["--id_num"]);
+        }
 
-        Config config = new Config(printHelp,pokemon,pokeName);
+        Config config = new Config(printHelp,pokemon,pokeName,pokeId);
 
         return config;
     }

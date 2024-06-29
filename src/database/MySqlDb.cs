@@ -1,6 +1,8 @@
 using System.Data;
 using MySqlConnector;
 
+namespace POKE_CLI.database;
+
 public class MySqlDb : IDb
 {
     private MySqlConnection? connection;
@@ -103,7 +105,7 @@ public class MySqlDb : IDb
             }
             catch (Exception e) 
             {
-                Console.WriteLine("Could not execute query :", e);
+                Console.WriteLine("Could not execute query: ",e);
             }
         }
         else
